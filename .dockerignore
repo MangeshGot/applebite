@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.env
+*.log
+Dockerfile
+docker-compose*.yml
+.vscode
+npm-debug.log
+yarn.lock
+pnpm-lock.yaml
+/.idea
+coverage
+build
+*.tgz

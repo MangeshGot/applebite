@@ -1,23 +1,16 @@
-FROM node:20-alpine AS builder
+# Stage 1: Build the Vite application
+FROM node:20-alpine
 
 WORKDIR /app
 
-# Install dependencies (devDependencies are needed for the build)
+# Copy package files to leverage Docker cache
 COPY package*.json ./
+
 RUN npm install
 
-# Copy source and build
+# Copy source code and build the app
 COPY . .
-RUN npm run build
 
-FROM nginx:alpine AS runner
+EXPOSE 5173
 
-# Copy built assets from builder
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Use a custom nginx config to enable SPA fallback
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "npm", "run", "dev" ]

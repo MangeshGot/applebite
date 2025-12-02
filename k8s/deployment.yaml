@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: applebite-deployment
-  lables:
+  labels:
     app: applebite
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       app: applebite
   template:
     metadata:
-      lables:
+      labels:
         app: applebite
     spec:
       containers:

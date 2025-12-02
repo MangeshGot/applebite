@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: applebite-deployment
+  lables:
+    app: applebite
+spec:
+  replicas: 3
+  selector:
+    matchLables:
+      app: applebite
+  template:
+    metadata:
+      lables:
+        app: applebite
+    spec:
+      containers:
+        - name: applebite
+          image: mangeshgot/apllebite:1
+          ports:
+            - containerPort: 5173

@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: applebite-service
+spec:
+  selector:
+    app: applebite
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5173

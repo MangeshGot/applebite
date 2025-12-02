@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: applebite
-          image: mangeshgot/apllebite:1
+          image: mangeshgot/applebite:1
           ports:
             - containerPort: 5173

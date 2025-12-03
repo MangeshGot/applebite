@@ -1,0 +1,14 @@
+replicaCount: 3
+
+image:
+  repository: mangeshgot/applebite
+  tag: 1
+  pullPolicy: IfNotPresent
+
+container:
+  port: 5173
+
+service:
+  # Use NodePort, ClusterIP, or LoadBalancer
+  type: NodePort
+  port: 80

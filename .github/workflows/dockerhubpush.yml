@@ -27,5 +27,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: mangeshgot/applebit:latest
+          tags: mangeshgot/applebite:latest
           file: ./Dockerfile

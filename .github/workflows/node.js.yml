@@ -33,8 +33,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Docker Build Image
         run: docker build -t applebite/applebite:latest .
 
       - name: Docker Push Image
         run: docker push applebite/applebite:latest
+
+      - name: Just echo a message
+        run: echo "Pushed Docker image to Docker Hub"
